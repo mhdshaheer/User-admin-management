@@ -1,5 +1,6 @@
 import express from "express";
 import userRouter from "./routes/userRoutes";
+import adminRouter from "./routes/adminRoutes";
 import cors from "cors";
 // import adminRoutes from "./routes/adminRoutes";
 
@@ -13,9 +14,8 @@ app.use(
 );
 // Middleware
 app.use(express.json());
-console.log("I am on routes");
 // Routes
 app.use("/", userRouter);
-// app.use("/api/admin", adminRoutes);
+app.use("/admin", adminRouter);
 
-export default app; // Exporting for use in server.ts
+export default app;
